@@ -118,7 +118,7 @@ resource "aws_iam_policy" "this" {
                 "s3:GetObject"
             ],
             "Resource": [
-                "${aws_s3_bucket.this.arn}"
+                "${aws_s3_bucket.this.arn}/*"
             ]
         }
     ]
