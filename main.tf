@@ -5,7 +5,7 @@ resource "random_string" "this" {
   count = var.random_suffix ? 1 : 0
 
   length  = var.random_string_length
-  number  = true
+  numeric = true
   special = false
   upper   = false
 }
