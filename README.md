@@ -1,4 +1,4 @@
-# Terraform AWS Module - Netgate pfSense Plus Firewall for Aviatrix
+# Terraform AWS Module - PAN Bootstrap in AWS for Aviatrix
 
 Terraform Module to Bootstrap Palo Alto Networks VM-Series Firewall on AWS for Aviatrix Firenet.
 Reference: https://docs.aviatrix.com/HowTos/bootstrap_example.html#
@@ -10,7 +10,7 @@ Default api user credential: api-user/Aviatrix123#
 ```hcl
 module "pan-bootstrap-aviatrix" {
   source  = "bayupw/pan-bootstrap-aviatrix/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 }
 ```
 
