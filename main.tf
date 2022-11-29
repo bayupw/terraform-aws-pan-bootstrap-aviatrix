@@ -45,7 +45,7 @@ resource "aws_s3_object" "bootstrap_folders" {
 resource "aws_s3_object" "bootstrap_xml" {
   bucket = aws_s3_bucket.this.id
   key    = "config/bootstrap.xml"
-  content = templatefile("${path.module}/bootstrap.xml",
+  content = templatefile("${path.module}/${local.bootstrap_file}",
     {
       "config_version"           = var.config_version,
       "detail_version"           = var.detail_version,
@@ -140,4 +140,8 @@ resource "aws_iam_instance_profile" "this" {
   name = local.aws_iam_role
   role = aws_iam_role.this.name
   depends_on = [aws_s3_object.bootstrap_xml,aws_s3_object.init_cfg_txt]
+}
+
+locals{
+  bootstrap_file = var.create_admin_api ? "bootstrap.xml" : "bootstrap-no-admin-api.xml"
 }

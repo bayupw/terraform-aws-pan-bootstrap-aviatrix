@@ -10,7 +10,10 @@ Default api user credential: api-user/Aviatrix123#
 ```hcl
 module "pan-bootstrap-aviatrix" {
   source  = "bayupw/pan-bootstrap-aviatrix/aws"
-  version = "1.0.1"
+  version = "1.0.2"
+
+  bootstrap_bucket = "pan-bootstrap-aviatrix"
+  create_admin_api = true
 }
 ```
 

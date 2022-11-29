@@ -5,6 +5,12 @@ variable "random_suffix" {
   default     = true
 }
 
+variable "create_admin_api" {
+  description = "Set to true to create admin-api user"
+  type        = bool
+  default     = false
+}
+
 # Length of random string to be appended to the name
 variable "random_string_length" {
   description = "Random string length"
